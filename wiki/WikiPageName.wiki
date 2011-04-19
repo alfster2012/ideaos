@@ -1,0 +1,100 @@
+#IVS: a way to verify document integrity through the use of a combination of torrents and document number assignment authorities
+
+WARNING:
+This is a very preliminary document and is mainly notes taken during an initial brain storming session.
+
+SECURE, WORLDWIDE DOCUMENT SPECIFICATION
+
+DEFINITIONS:
+* IVS: Information Verification System
+* NAS: Number Assignment Authority
+* IU: Information Unit (Any webpage, word processor document, text file, program, image file, etc)
+* IVD: Information Verification Database
+
+A hash cannot be used to reverse the information into the original document.
+
+PLACE NOTES, RESEARCH, CONCLUSIONS AND SPECIFICATIONS DRAFT IN DOCUMENT (IU) FOR BLOG
+
+QUESTION:
+?? Should the document hash (finger print) be stored within both the torrent file AND the NAS (Number Assignment System) OR just the torrent file ??
+
+RESEARCH:
+* Web of trust http://en.wikipedia.org/wiki/Web_of_trust
+* Meshes (RFC 4158)
+* IETF's Public-Key Infrastructure (X.509) PKIX
+the term X.509 certificate usually refers to the IETF's PKIX Certificate and CRL Profile of the X.509 v3 certificate standard, as specified in RFC 5280, commonly referred to as PKIX for Public Key Infrastructure (X.509).
+
+DEFINITIONS:
+
+Things can be linked to other things they just need to have a hash finger print of the document. 
+
+The word "document" is based on dead trees and a page is based on the diameter of a plant.
+
+Unit of information (UI): Any webpage, word processor document, text file, program, image file
+
+Documents and websites can be altered in transit to and from servers. We need a system to verify document integrity given the assumption of an insecure infrastructure to and from the server and likely even the server itself.
+
+Create a pier-to-pier system like file sharing torrents that allows for the sharing of a hash database of EVERY document.
+
+Already a hash within .torrent files known as "bencode" file type.
+
+BENCODE (http://en.wikipedia.org/wiki/Bencode):
+Bencode (pronounced "BEE-en-code") is the encoding used by the peer-to-peer file sharing system BitTorrent for storing and transmitting loosely structured data.
+
+    * byte strings,
+    * integers,
+    * lists, and
+    * dictionaries (associative arrays).
+
+Bencoding is most commonly used in torrent files. These metadata  files are simply bencoded dictionaries.
+
+Inefficient file type:
+	* base 10
+	* ascii
+
+Dad could help with encoding to a more efficient file type. The document hash database is critical in structure as the size will have a great impact on infrastructure and transmission speed.
+
+LOOK UP WEB OF TRUST
+
+SSL uses "assumes a strict hierarchical system of certificate authorities (CAs) for issuing the certificates." Would be fine in a perfect world, but we must mitigate against a non perfect world. Our infrastructure is untrustworthy.
+
+X.509 extends to email and DNS entries as well
+
+Browsers already contain an SSL database and graphica tools for displaying it.
+
+Two different areas to store, stransport and address:
+	* the root authorities (mass)
+	* the IUs themselves (super mass)
+
+Root authorities: May not need this 
+
+Probably don't bother with a corrupt user list.
+
+Dynamically updated source file, but only add to it. Any document already created cannot be mofified.
+
+Each document is given a sequential number in assending order. This could be provided through a central agency or group of agencies. The challenge then becomes "locking" the database or setting a semiphore of access.
+
+This could be done by syncing multiple databases. Number assignment could occur by choosing the next number at the number assignment authority, then transmitting this number to the other authorities. When confirmation is received from the other authorities that the number has been accepted and is not a duplicate, than the number is issued to the UI creator and stored within the torrent database.
+
+A document can then be verified by the number assignment system in addition to the torrent itself. Mabye the best solution is a date and time stamp is stored with the NAS and this can be used to verify the document (hash is stored in the torrent). Sophisticated verification software used by techs, attornies and law enforcement can then access the NAS as need for later verification.
+
+QUESTION:
+?? Should the document hash (finger print) be stored within both the torrent file AND the NAS (Number Assignment System) OR just the torrent file ??
+
+IVD:
+Challenges:
+* How can information be divided into groups, classifications or other such division so as to create reasonable sized files that can be distributed on a mass scale.
+* How can this database be updated real time onto so many systems: Records are merely appended to the end of the file. Regions must be created within a virtual paradgm. Possibly a membership system within differing types of information such as bloggers, attorneys, government agencies, etc. These groups can be added and managed by the NASs.
+
+Torrents divide the file in an odd fashion. If data is appended to the file, then this would disrupt the torrenting process? Not likely as will only be appending the data.
+
+Torrenting process is not like an ordinary torrent in that it is managed transparently by the browser in the backgroud. Also, major corporations, governmental agencies and other groups could maintain their own servers.
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
